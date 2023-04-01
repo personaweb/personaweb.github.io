@@ -12,20 +12,26 @@
     <div class="forgotId">
         <h1>Forgot Id</h1>
     </div>
-    <div class="input" id="Nama">
+    <div class="input" >
         <h2>Nama</h2>
-        <input type="text">
+        <input type="text" id="nama">
     </div>
-    <div class="input" id="telepon">
+    <div class="input" >
         <h2>No Tlp</h2>
-        <input type="text">
+        <input type="text" id="telepon">
     </div>
-    <button class="cek">
+    <button class="inputButton" id="cek" onclick="button(0)">
         <h1>Cek Id</h1>
     </button>
+
+    <button class="inputButton" id="clear" onclick="button(1)">
+        <h1>Clear</h1>
+    </button>
+
     <div class="kolomPesan">
-       <h2 id="pesan">berhasil</h2> 
+       <h2 id="pesan"></h2> 
     </div>
 
 </body>
+<script src="script.js"></script>
 </html>
