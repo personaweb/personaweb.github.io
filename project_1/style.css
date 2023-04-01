@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    padding-top: 10vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: aqua;
+}
+
+.forgotId{
+    width: 70vw;
+    height: 10vw;
+
+    margin-bottom: 2vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: aquamarine;
+    border-radius: 8px;
+}
+
+.input{
+    width: 70vw;
+    height: 6vw;
+
+    margin-bottom: 1vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    
+    background-color: aquamarine;
+    border-radius: 8px;
+}
+
+.input input{
+    height: 80%;
+    padding-left: 1vw;
+
+    color: white;
+    font-size: 2.7vh;
+
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(161, 161, 161);
+}
+
+.cek{
+    width: 70vw;
+    height: 10vw;
+
+    margin-bottom: 2vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: aquamarine;
+    border-radius: 8px;
+    border: none;
+}
+
+.kolomPesan{
+    width: 70vw;
+    height: 7vw;
+
+    padding-left: 1vh;
+    margin-bottom: 2vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: aquamarine;
+    border-radius: 8px;
+    
+}
