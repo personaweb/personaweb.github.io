@@ -5,8 +5,8 @@
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
+    /* width: 10vw;
+    height: 10vh; */
 
     padding-top: 10vh;
 
@@ -15,38 +15,75 @@ body {
     align-items: center;
     justify-content: flex-start;
 
-    background-color: aqua;
+    background-color: rgb(18, 82, 82);
 }
 
-.box1 {
-    width: 10vh;
+#divSoal{
+
+    height: 30vh;
+    width: 80vw;
+
+    font-size: 3.5rem;
+    background-color: blue;
+    
+}
+
+.teks{
+    display: inline;
+}
+
+.isian{
+    display: inline;
+}
+
+.buttonIsian {
+    position: absolute;
+}
+
+#divOpsi{
+
+
     height: 10vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-#pertama {
-    background-color: rgb(25, 0, 255);
-}
-
-#kedua {
-    background-color: rgb(238, 234, 5);
-}
-
-.box2 {
-    width: 5vh;
-    height: 5vh;
+    width: 80vw;
 
     position: absolute;
+    bottom: 20%;
 
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
 
-    background-color: rgb(253, 253, 253);
+    font-size: 1rem;
+    background-color: rgb(209, 209, 209);
+    
 }
 
+button {
+    
+    margin: 10px;
+    height: fit-content;
+    padding: 7px 10px;
+
+    border: none;
+    border-radius: 20px;
+
+    width :fit-content;
+
+    background-color: rgb(113, 243, 123);
+
+}
+
+.buttonOpsi {
+    
+    margin: 10px;
+    height: fit-content;
+    padding: 7px 10px;
+
+    border: none;
+    border-radius: 20px;
+
+    width :fit-content;
+
+    background-color: rgb(113, 243, 123);
+
+}
