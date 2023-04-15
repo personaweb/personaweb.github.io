@@ -1,7 +1,7 @@
 // validasi input no telepon 
 // validasi input nama dan no telepon 
 
-const soal = ["definisi satu adalah"," ____ ", "dimana kedua adalah"," ___ ","dan ketiga itu"]
+const soal = ["definisi satu adalah"," ____ ", "dimana kedua adalah"," ____ ","dan ketiga itu"]
 const opsi = ["jawaban 1","dua","jawaban 2","jawaban 3","lima","enam","Tujuh"]
 const kunci = [0,2,3]
 
@@ -101,10 +101,10 @@ function buatButtonIsian(){
         button.className = "buttonIsian"
         button.innerText = isi
 
-        button.style.top = (posY + 10) + "px"
+        button.style.top = (posY ) + "px"
         button.style.left = (posX - 10) + "px"
-        button.style.width = (lebar - 10)  + "px"
-        button.style.height = (tinggi/2) + "px"
+        // button.style.width = (lebar + 10)  + "px"
+        // button.style.height = (tinggi/2) + "px"
 
         button.style.display = "none"
         button.onclick = function(){buttonTerpilih("isian",i)}
