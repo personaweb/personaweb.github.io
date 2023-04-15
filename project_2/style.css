@@ -23,7 +23,7 @@ body {
     height: 40vh;
     width: 80vw;
 
-    font-size: 7vh;
+    font-size: 2.5em;
     background-color: blue;
     
 }
@@ -40,6 +40,7 @@ body {
     position: absolute;
     height: fit-content;
     width :fit-content;
+    
 }
 
 #divOpsi{
@@ -55,7 +56,6 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
 
-    font-size: 5vh;
     background-color: rgb(209, 209, 209);
     
 }
@@ -69,6 +69,8 @@ button {
 
     border: none;
     border-radius: 20px;
+    
+    font-size: 1em;
 
     background-color: rgb(113, 243, 123);
 
@@ -83,7 +85,34 @@ button {
     border: none;
     border-radius: 20px;
 
+    font-size: 1em;
     width :fit-content;
 
     background-color: rgb(113, 243, 123);
+}
+
+#divBawah{
+
+    height: 8vh;
+    width: 80vw;
+
+    position: absolute;
+    bottom: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: rgb(209, 209, 209);
+    
+}
+
+#buttonCek {
+    background-color: beige;
+    width:65vw;
+}
+
+#buttonPass {
+    background-color: beige;
+    width:20vw;
 }

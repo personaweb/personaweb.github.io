@@ -1,7 +1,7 @@
 // validasi input no telepon 
 // validasi input nama dan no telepon 
 
-const soal = ["definisi satu adalah"," ____ ", "dimana kedua adalah"," ____ ","dan ketiga itu"]
+const soal = ["definisi satu adalah"," ____ ", "dimana kedua adalah"," ____ ","dan ketiga itu", "_____"]
 const opsi = ["jawaban 1","dua","jawaban 2","jawaban 3","lima","enam","Tujuh"]
 const kunci = [0,2,3]
 
@@ -12,6 +12,38 @@ function test () {
     buatSoal(soal)
     buatButtonOpsi()
     buatButtonIsian()
+}
+
+function lanjut(){
+    console.log("NextLevel")
+}
+
+function cekJawaban(){
+    let isian = document.getElementsByClassName('buttonIsian')
+    if (isian.length != kunci.length){
+        console.log ("jawaban kurang")
+    }
+    else {
+        let benar = 0
+        for (let i = 0 ; i < isian.length ; i++){
+
+            if (isian[i].textContent == opsi[kunci[i]]){
+                console.log(`jawaban no ${i+1} benar`)
+                isian[i].disabled = "true"
+                benar += 1
+            }
+            else {
+                console.log(`jawaban no ${i+1} salah`);
+                isian[i].style.backgroundColor = "rgb(236, 111, 111)";
+            }
+            
+        }
+        if (benar == kunci.length){
+            lanjut()
+        }
+    }
+    
+    
 }
 
 function buttonTerpilih(jenis,nomor){
@@ -45,6 +77,7 @@ function buttonTerpilih(jenis,nomor){
         let buttonIsian = buttonsIsian[last]
         
         buttonIsian.innerText = opsi[nomor]
+        buttonIsian.style.backgroundColor = "rgb(113, 243, 123)";
         buttonIsian.style.display = "block"
         
         last += 1
