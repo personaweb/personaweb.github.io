@@ -1,17 +1,21 @@
 // validasi input no telepon 
 // validasi input nama dan no telepon 
 
-const soal = ["definisi satu adalah"," ____ ", "dimana kedua adalah"," ____ ","dan ketiga itu", "____"]
-const opsi = ["jawaban 1","dua","jawaban 2","jawaban 3","lima","enam","Tujuh"]
-const kunci = [0,2,3]
+let soal = ["definisi satu adalah"," ____ ", "dimana kedua adalah"," ____ ","dan ketiga itu", "____"]
+let opsi = ["jawaban 1","dua","jawaban 2","jawaban 3","lima","enam","Tujuh"]
+let kunci = [0,2,3]
+
+let paket =[]
 
 let last=0
 
 function test () {
-
-    buatSoal(soal)
-    buatButtonOpsi()
-    buatButtonIsian()
+    // fetching -> data isi -> baru buat soal
+    // buatRequest()
+    fetchPaket()
+      
+    
+    
 }
 
 function lanjut(){
@@ -96,6 +100,7 @@ function test2(){
 }
 
 function buatButtonOpsi(){
+
     let container = document.getElementById("divOpsi")
     let jumlah = opsi.length
 
@@ -155,7 +160,7 @@ function buatSoal (){
     
     let container = document.getElementById("divSoal")
     let content = ""
-    
+
     for (let i = 0 ; i < soal.length; i++){
         if (i%2 == 0){
             content+= `<p class="teks"> ${soal[i]} </p>`
@@ -168,15 +173,15 @@ function buatSoal (){
 }
 
 
-function buatRequest(nama,telepon){
+function buatRequest(){
 
     console.log("pesanan diproses")
     
     // fetch pesanan 
-    fetch("https://script.google.com/macros/s/AKfycbx-RSvI6WBRyHCTUTReqLP8xmQxigH7Jk4hq1AtcGai69EP2uCvlrjLo5JI71E1nLVm/exec?nama="+ String(nama) + "&noTelp=" + String(telepon)
+    fetch("https://script.google.com/macros/s/AKfycbyrFUeSRIxMTIA_3snFf6bdlKWfzDOU_WAkP6jhT8tFZfDqJ83armmir77-daQ0QQuT/exec"
         
     ).then(response => {
-        console.log(response);
+        paket = response.json();
         
     }).catch(err => {
         console.log("Error:" + err);
@@ -185,18 +190,20 @@ function buatRequest(nama,telepon){
 }
 
 
-async function fetchLogin(nama,telepon){
+async function fetchPaket(){
     
-    const response = await fetch("https://script.google.com/macros/s/AKfycbx-RSvI6WBRyHCTUTReqLP8xmQxigH7Jk4hq1AtcGai69EP2uCvlrjLo5JI71E1nLVm/exec?nama="+ String(nama) + "&noTelp=" + String(telepon),{method: 'GET'});
-    const data = await response.json();
-    let hasil = JSON.parse(data)
-    if (hasil == -1){
-        pesan("id tidak ditemukan")
-    }
-    else{
-        pesan("id adalah : " + hasil)
-    }
+    const response = await fetch("https://script.google.com/macros/s/AKfycbyrFUeSRIxMTIA_3snFf6bdlKWfzDOU_WAkP6jhT8tFZfDqJ83armmir77-daQ0QQuT/exec");
+    let data = await response.json();
+    let paket = data
+    opsi = paket[0]['opsi']
+    soal = paket[0]['soal']
+    kunci = paket[0]['kunci']
+    console.log (paket)
+
+    buatSoal()
+    buatButtonOpsi()
+    buatButtonIsian()
+    // let paket = JSON.parse(data)
     
-  
-    return hasil
+    return data
 }
