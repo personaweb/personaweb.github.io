@@ -30,14 +30,14 @@ body {
 
 #divSoal{
 
-    height: 40vh;
+    height: 46vh;
     width: 80vw;
 
     padding: 10px;
     position: absolute;
     top :10%;
 
-    font-size: 2.2em;
+    font-size: 1.9em;
     background-color: rgb(168, 168, 168);
     border-radius: 10px;
     
@@ -59,13 +59,11 @@ body {
 }
 
 #divOpsi{
-
-
-    height: 20vh;
+    height: 16vh;
     width: 80vw;
 
     position: absolute;
-    bottom: 22%;
+    bottom: 24%;
 
     display: flex;
     flex-direction: row;
