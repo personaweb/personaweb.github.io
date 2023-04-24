@@ -6,20 +6,86 @@ let opsi = ["jawaban 1","dua","jawaban 2","jawaban 3","lima","enam","Tujuh"]
 let kunci = [0,2,3]
 
 let paket =[]
+let level = 1
 
 let last=0
 
 function test () {
     // fetching -> data isi -> baru buat soal
     // buatRequest()
-    fetchPaket()
-      
-    
+    fetchPaket2()
     
 }
 
 function lanjut(){
-    console.log("NextLevel")
+
+    if (level != 3) {
+        console.log("NextLevel")
+
+        displayLevel(level)
+        setTimeout(closeLevel,1500)
+
+        level += 1
+        displayQuiz(level)
+        // tampilan soal baru 
+    }    
+    else selesai()
+}
+
+function selesai(){
+    console.log("selesai")
+    displayAyat()
+}
+
+function resetBody(){
+    const body = document.body
+    let button = body.childNodes
+    
+    for (let i = body.childNodes.length -1; i>=17;i--){
+        body.removeChild(button[i])
+        console.log(i)
+    }
+
+    const divOpsi = document.getElementById("divOpsi")
+    divOpsi.innerHTML=""
+
+    last = 0
+}
+
+function displayQuiz(halaman){
+    if (level !=1) resetBody()
+
+    opsi = paket[halaman-1]['opsi']
+    soal = paket[halaman-1]['soal']
+    kunci = paket[halaman-1]['kunci']
+      
+    buatSoal()
+    buatButtonIsian()
+    buatButtonOpsi()
+    
+}
+
+function displayAyat(){
+
+    const popup = document.getElementById('popup')
+    const isiPopup = document.getElementById('isiPopup')
+
+    isiPopup.innerText = "selesai" 
+    popup.style.display = "flex"
+}
+
+function displayLevel(level){
+    const popup = document.getElementById('popup')
+    const textLevel = document.getElementById('level')
+
+    textLevel.innerText = level + "/3"
+    popup.style.display = "flex"
+}
+
+function closeLevel(){
+    const popup = document.getElementById('popup')
+    popup.style.display = "none"
+
 }
 
 function cekJawaban(){
@@ -143,9 +209,9 @@ function buatButtonIsian(){
         button.className = "buttonIsian"
         button.innerText = isi
 
-        button.style.top = (posY - 7 ) + "px"
+        button.style.top = (posY - 9 ) + "px"
         button.style.left = (posX - 10) + "px"
-        // button.style.width = (lebar + 10)  + "px"
+        button.style.width = (lebar - 5)  + "px"
         // button.style.height = (tinggi/2) + "px"
 
         button.style.display = "none"
@@ -172,7 +238,6 @@ function buatSoal (){
     container.innerHTML = content
 }
 
-
 function buatRequest(){
 
     console.log("pesanan diproses")
@@ -194,16 +259,30 @@ async function fetchPaket(){
     
     const response = await fetch("https://script.google.com/macros/s/AKfycbyrFUeSRIxMTIA_3snFf6bdlKWfzDOU_WAkP6jhT8tFZfDqJ83armmir77-daQ0QQuT/exec");
     let data = await response.json();
-    let paket = data
-    opsi = paket[0]['opsi']
-    soal = paket[0]['soal']
-    kunci = paket[0]['kunci']
+ 
+    paket = data
     console.log (paket)
 
-    buatSoal()
-    buatButtonOpsi()
-    buatButtonIsian()
+    // buatSoal()
+    // buatButtonOpsi()
+    // buatButtonIsian()
+
     // let paket = JSON.parse(data)
     
     return data
 }
+
+async function fetchPaket2(){
+    
+    const response = await fetch("./test.json");
+    let data = await response.json();
+    paket = data
+    
+    displayQuiz(1)
+    // console.log (paket[])
+    // let paket = JSON.parse(data)
+    
+    return data
+}
+
+

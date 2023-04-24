@@ -18,3 +18,9 @@ body {
     background-color: aqua;
 }
 
+.button1{
+    width: 20px;
+    height: 10px;
+
+    display: block;
+}

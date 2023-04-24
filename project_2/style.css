@@ -52,9 +52,13 @@ body {
 }
 
 .buttonIsian {
+    padding :0px 5px 0px 5px ;
     position: absolute;
     height: fit-content;
-    width :fit-content;
+    /* width :180px; */
+    /* font-size: inherit; */
+    font-size: 1.6em;
+
     
 }
 
@@ -132,4 +136,34 @@ button {
     background-color: rgb(168, 168, 168);
     font-size: 1em;
     width:20vw;
+}
+
+#popup{
+    background-color: rgba(54, 54, 54, 0.582);
+
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top:0px;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 100;
+
+}
+
+#isiPopup{
+    width: 70vw;
+    height: 30vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-color: azure;
+    border-radius: 10px;
 }

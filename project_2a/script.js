@@ -1,18 +1,39 @@
 // goal  
 
 function test (){
-    // let file = test.json
-    // console.log (file)
-    // console.log("halo")
+
+    console.log(".test") 
+    const button = document.createElement('button')
+    button.className = "button1"
+
+    const button2 = document.createElement('button')
+    button.className = "button1"
+    
+    const button3 = document.createElement('button')
+    button.className = "button1"
+    
+    const container = document.getElementById('container')
+    container.appendChild(button)
+    container.appendChild(button2)
+    container.appendChild(button3)
+    // container.appendChild(button2)
+    // container.appendChild(button2)
+    // container.appendChild(button2)
+
+    // container.appendChild(button)
+
+
+}
+
+
+
+function fetchJson(){
     fetch ('./test.json')
     .then((reponse) => reponse.json())
-    // .then((reponse) => console.log(reponse.json()) )
     .then((json)=> {
         const teks = document.getElementById("teks")
         teks.innerText = json.soal
     })
-    // .then(()=> console.log("sem"))
-    // let obj = JSON.parse(file)
 }
 
 function buatRequest(nama,telepon){
