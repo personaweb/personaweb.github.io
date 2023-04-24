@@ -1,38 +1,126 @@
-// goal  
+let paket = []
+let last = 1
+let panjangJawaban = 0
 
 function test (){
-
-    console.log(".test") 
-    const button = document.createElement('button')
-    button.className = "button1"
-
-    const button2 = document.createElement('button')
-    button.className = "button1"
-    
-    const button3 = document.createElement('button')
-    button.className = "button1"
-    
-    const container = document.getElementById('container')
-    container.appendChild(button)
-    container.appendChild(button2)
-    container.appendChild(button3)
-    // container.appendChild(button2)
-    // container.appendChild(button2)
-    // container.appendChild(button2)
-
-    // container.appendChild(button)
-
-
+    fetchJson()
+    setTimeout(start,3000)
+    // fetchJson()
 }
 
+function start (){
+    console.log("jalan1")
+    // displayJudulSoal(1)
+    displaySoal(1)
+    generateButtonJawaban()
+    displayButtonOpsi(1)
+    
+    console.log("stop1")
+}
 
+function displayJudulSoal(nomor){
+    const judulSoal = document.getElementById('judulSoal')
+    judulSoal.innerText = paket['soal'][nomor-1]["ayat"]
+}
+
+function displaySoal(nomor){
+    const divSoal = document.getElementById("soal")
+    
+    let teks = paket['soal'][nomor-1]["teks"]
+    let blank = paket['soal'][nomor-1]["blank"]
+    panjangJawaban = blank.length
+
+    for ( let i = 0; i < blank.length; i++){
+        let component1 = document.createElement("div")
+        component1.className = "text"
+        component1.innerText = teks[i]
+
+        let component2 = document.createElement("div")
+        component2.className = "blank"
+        component2.innerText = blank[i]
+
+        divSoal.appendChild(component1)
+        divSoal.appendChild(component2)
+    }
+
+    if (blank.length < teks.length){
+        let component1 = document.createElement("div")
+        component1.className = "text"
+        component1.innerText = teks[teks.length-1]
+
+        divSoal.appendChild(component1)
+    }
+    
+}
+
+function displayButtonOpsi(nomor){
+
+    const divOpsi = document.getElementById("opsi")
+    let teksOpsi = paket['soal'][nomor-1]["opsi"]
+    
+    for ( let i = 0; i < teksOpsi.length; i++){
+    
+        let component1 = document.createElement("button")
+        component1.className = "buttonOpsi"
+        // component1.onclick = `opsiOnClick(${i})`
+        component1.onclick = function(){opsiOnClick(i)}
+        component1.innerText = teksOpsi[i]
+
+        divOpsi.appendChild(component1)
+    }
+}
+
+function generateButtonJawaban(){
+    const divJawaban = document.getElementById("jawaban")
+    let blank =  document.getElementsByClassName('blank')
+
+    for ( let i = 0; i < blank.length; i++){
+    
+        let component1 = document.createElement("button")
+        component1.className = "buttonJawaban"
+        component1.innerText = 'a'
+        component1.style.width = (blank[i].getBoundingClientRect().width - 5) + "px"
+        component1.style.height = (blank[i].getBoundingClientRect().height) + "px"
+        component1.style.position ='absolute'
+        component1.style.top = (blank[i].getBoundingClientRect().y - 5) + "px"
+        component1.style.left = (blank[i].getBoundingClientRect().x )  + "px"
+        component1.onclick = function(){jawabanOnClick(i)}
+
+        divJawaban.appendChild(component1)
+    }
+}
+
+function opsiOnClick(nomor){
+    console.log(nomor)
+    const button = document.getElementsByClassName('buttonOpsi')
+    button[nomor].disabled = true
+
+    const buttonJawaban = document.getElementsByClassName('buttonJawaban')
+    buttonJawaban[last-1].innerText = button[nomor].innerText
+    buttonJawaban[last-1].style.display = 'flex'
+    last = Math.min(panjangJawaban,(last + 1))
+}
+
+function jawabanOnClick(nomor){
+    const button = document.getElementsByClassName('buttonOpsi')
+    button[nomor].disabled = false
+
+    const buttonJawaban = document.getElementsByClassName('buttonJawaban')
+    // buttonJawaban[nomor].innerText = button[nomor].innerText
+    buttonJawaban[nomor].style.display = 'none'
+    last = Math.min(panjangJawaban,(nomor+1))
+}
 
 function fetchJson(){
-    fetch ('./test.json')
-    .then((reponse) => reponse.json())
-    .then((json)=> {
-        const teks = document.getElementById("teks")
-        teks.innerText = json.soal
+    console.log('fetching')
+
+    fetch ("./test.json")
+    .then((Response)=>{
+        return Response.json()
+    })
+    .then((hasil)=>{
+        paket = hasil
+        return hasil;
     })
 }
 

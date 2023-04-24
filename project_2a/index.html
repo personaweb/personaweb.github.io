@@ -7,15 +7,55 @@
     <title>Prototipe</title>
     <link href="style.css" rel="stylesheet">
 </head>
-<body onload="test()">
+<body>
+    <!-- onload="test()" -->
    
-    <div id="teks"></div>
-    <div id="container">
-        <div class="opsi">
-            <h3>ini cheklist</h3>
-            <h2>ini opsi </h2>
-        </div>
+  <div id="quizPage">
+
+    <div id="judulSoal">
+      <!-- 2 Kor 5 : 17 -->
     </div>
+
+    <div id="soal">
+        <!-- <div class="text">Jadi siapa yang ada di dalam Kristus, ia adalah</div>
+        <div class="blank">____________</div>
+        <div class="text">: yang lama</div>
+        <div class="blank">_____________</div>
+        <div class="text">, sesungguhnya yang baru</div>
+        <div class="blank">_____</div>
+        <div class="text">sudah datang</div> -->
+    </div>
+
+    <div id="opsi">
+        <!-- <button class="buttonOpsi">satu</button>
+        <button class="buttonOpsi">satu dua</button>
+        <button class="buttonOpsi">satu panjang sekali</button>
+        <button class="buttonOpsi">tiga</button>
+        <button class="buttonOpsi">satu</button>
+        <button class="buttonOpsi">satu dua</button>
+        <button class="buttonOpsi">satu panjang sekali</button>
+        <button class="buttonOpsi">tiga</button> -->
+    </div>
+    
+    <div id="jawaban"></div>
+    <div id="nav">
+        <button id="cekButton" onclick="cekJawaban()">cek</button>
+        <button id="passButton"onclick="pass()">pass</button>
+    </div>
+  </div>
+  
+  <div id="popup1">
+    <div id="judul"></div>
+    <div id="isiPopup"></div>
+  </div>
+
+  <div id="ayatPage">
+    <div id="ayat"></div>
+    <div id="isiAyat"></div>
+    <div id="nilai"></div>
+  </div>
+
+
 
 </body>
 <script src="script.js"></script>

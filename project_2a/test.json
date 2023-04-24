@@ -1,5 +1,31 @@
 {
-    "soal":"ini soal pertama",
-    "jawaban":"ini jawabannya",
-    "opsi":[1,2,3,4]
+    "soal": [
+        {
+            "ayat":"2 Kor 5 : 17",
+            "teks":["Jadi siapa yang ada di dalam Kristus, ia adalah ",": yang lama",", sesungguhnya yang baru","datang."],
+            "blank":["____________","_____________","_____"],
+            "opsi":["ciptaan baru","sudah berlalu","sudah","akan"],
+            "kunci":[0,1,2]
+        },
+    
+        {
+            "ayat":"2 Kor 5 : 18",
+            "teks":["Jadi 2 siapa yang ada di dalam Kristus, ia adalah ",": yang lama",", sesungguhnya yang baru","datang."],
+            "blank":["____________","_____________","_____"],
+            "opsi":["ciptaan baru 2","sudah berlalu","sudah","akan"],
+            "kunci":[0,1,2]
+        },
+    
+        {
+            "ayat":"2 Kor 5 : 19",
+            "teks":["Jadi 3 siapa yang ada di dalam Kristus, ia adalah ",": yang lama",", sesungguhnya yang baru","datang."],
+            "blank":["____________","_____________","_____"],
+            "opsi":["ciptaan baru 3","sudah berlalu","sudah","akan"],
+            "kunci":[0,1,2]
+        }
+    ],
+
+    "ayat":"ayat baru"
+
 }
+
