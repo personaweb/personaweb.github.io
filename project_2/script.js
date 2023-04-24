@@ -61,8 +61,7 @@ function displayQuiz(halaman){
       
     buatSoal()
     buatButtonIsian()
-    buatButtonOpsi()
-    
+    buatButtonOpsi() 
 }
 
 function displayAyat(){
