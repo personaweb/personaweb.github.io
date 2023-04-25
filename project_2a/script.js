@@ -91,24 +91,38 @@ function generateButtonJawaban(){
 }
 
 function opsiOnClick(nomor){
-    console.log(nomor)
+
     const button = document.getElementsByClassName('buttonOpsi')
     button[nomor].disabled = true
 
     const buttonJawaban = document.getElementsByClassName('buttonJawaban')
+
+    for (let i = buttonJawaban.length; i>0; i--){
+        if (buttonJawaban[i-1].style.display != 'flex'){
+           console.log(i)
+            last = i
+        }
+    }
+    
     buttonJawaban[last-1].innerText = button[nomor].innerText
     buttonJawaban[last-1].style.display = 'flex'
-    last = Math.min(panjangJawaban,(last + 1))
+
 }
 
 function jawabanOnClick(nomor){
-    const button = document.getElementsByClassName('buttonOpsi')
-    button[nomor].disabled = false
 
     const buttonJawaban = document.getElementsByClassName('buttonJawaban')
-    // buttonJawaban[nomor].innerText = button[nomor].innerText
     buttonJawaban[nomor].style.display = 'none'
-    last = Math.min(panjangJawaban,(nomor+1))
+    
+    let text = buttonJawaban[nomor].innerText
+    let nomorOpsi = paket['soal'][nomor]["opsi"].indexOf(text)
+
+    const buttonOpsi = document.getElementsByClassName('buttonOpsi')
+    buttonOpsi[nomorOpsi].disabled = false
+}
+
+function buttonText (button){
+    return button.innerText
 }
 
 function fetchJson(){
