@@ -17,10 +17,10 @@
         },
     
         {
-            "ayat":"Mat 5 : 16",
-            "teks":["Demikianlah hendaknya terangmu","di depan orang, supaya mereka","perbuatanmu yang","dan memuliakan Bapamu yang di sorga"],
-            "blank":["_________","_______","_______"],
-            "opsi":["bercahaya","menunjukkan","melihat","baik","memuji"],
+            "ayat":"Kol 3 : 23",
+            "teks":["Apapun juga yang kamu",", perbuatlah,dengan segenap hatimu seperti", "Tuhan dan","untuk manusia"],
+            "blank":["_______","_______","________"],
+            "opsi":["perbuat","dapatkan","untuk","bukan","manusia."],
             "kunci":[0,2,3]
         }
     ],
