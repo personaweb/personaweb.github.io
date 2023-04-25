@@ -1,5 +1,6 @@
 let paket = []
 let last = 1
+let level = 1
 let panjangJawaban = 0
 
 function test (){
@@ -10,12 +11,40 @@ function test (){
 
 function start (){
     console.log("jalan1")
-    // displayJudulSoal(1)
+
+    displayJudulSoal(1)
     displaySoal(1)
     generateButtonJawaban()
     displayButtonOpsi(1)
     
     console.log("stop1")
+}
+
+function naikLevel(){
+    displayPopup1(true)
+    setTimeout(displayPopup1,2000)
+    
+    clearUI()
+
+    level+=1;
+
+    displayJudulSoal(level)
+    displaySoal(level)
+    generateButtonJawaban()
+    displayButtonOpsi(level)
+
+}
+
+function clearUI(){
+    const judul = document.getElementById("judulSoal")
+    const soal = document.getElementById("soal")
+    const opsi = document.getElementById("opsi")
+    const jawaban = document.getElementById("jawaban")
+
+    judul.innerHTML =''
+    soal.innerHTML =''
+    opsi.innerHTML =''
+    jawaban.innerHTML =''
 }
 
 function displayJudulSoal(nomor){
@@ -123,6 +152,81 @@ function jawabanOnClick(nomor){
 
 function buttonText (button){
     return button.innerText
+}
+
+function cekJawaban(nomor){
+    let kunci = paket['soal'][nomor-1]["kunci"]
+    let opsi = paket['soal'][nomor-1]["opsi"]
+
+    const buttonJawaban = document.getElementsByClassName('buttonJawaban')
+
+    let jawaban = []
+
+    let jumlahKunci = kunci.length
+    for (let i = 0; i<jumlahKunci; i++){    
+        if (buttonJawaban[i].style.display == 'flex')
+        {   
+            jawaban.push(buttonJawaban[i].innerText)
+        }  
+    } 
+    
+    
+    let jumlahJawaban = jawaban.length
+    if (jumlahJawaban != jumlahKunci){
+        displayPopup2(true)
+        setTimeout(displayPopup2,2000)
+    }
+    else {
+        let benar = 0
+        for (let i = 0; i<jumlahKunci; i++){
+           
+            if (opsi[kunci[i]] == jawaban[i]){
+                buttonJawaban[i].style.backgroundColor = "rgb(7, 252, 88)"
+                buttonJawaban[i].disabled = true
+                benar += 1
+            }
+            else{
+                buttonJawaban[i].style.backgroundColor = "rgb(184, 49, 49)"
+            }
+
+        } 
+        if ( benar == jumlahKunci){
+            console.log("nextlevev")
+            naikLevel()
+        } 
+    } 
+}
+
+function displayPopup2(show=false){
+    const div = document.getElementById("popup2")
+    if (show){
+        console.log("test1")
+        div.style.zIndex = 152;
+        div.style.display = 'flex'
+    }
+    else {
+        div.style.zIndex = -100;
+        div.style.display = 'none'
+    }   
+}
+
+function displayPopup1(show=false,textJudul='Hore'){
+    const div = document.getElementById("popup1")
+    const judul = document.getElementById("judul")
+    const isi = document.getElementById("isiPopup")
+
+    const panjangSoal = paket['soal'].length
+
+    if (show){
+        judul.innerText = textJudul;
+        isi.innerText = String(level)+'/'+String(panjangSoal)
+        div.style.zIndex = 152;
+        div.style.display = 'flex'
+    }
+    else {
+        div.style.zIndex = -100;
+        div.style.display = 'none'
+    }   
 }
 
 function fetchJson(){
