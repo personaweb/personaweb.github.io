@@ -14,8 +14,9 @@ function start (){
 
     displayJudulSoal(1)
     displaySoal(1)
+    displayButtonOpsi(1) 
     generateButtonJawaban()
-    displayButtonOpsi(1)
+
     
     console.log("stop1")
 }
@@ -28,11 +29,16 @@ function naikLevel(){
 
     level+=1;
 
-    displayJudulSoal(level)
-    displaySoal(level)
-    generateButtonJawaban()
-    displayButtonOpsi(level)
-
+    const panjangSoal = paket['soal'].length
+    if (level <= panjangSoal){
+        displayJudulSoal(level)
+        displaySoal(level)
+        displayButtonOpsi(level)
+        generateButtonJawaban()
+    }
+    else {
+        displayAyat()
+    }
 }
 
 function clearUI(){
@@ -45,6 +51,8 @@ function clearUI(){
     soal.innerHTML =''
     opsi.innerHTML =''
     jawaban.innerHTML =''
+
+    last = 1
 }
 
 function displayJudulSoal(nomor){
@@ -91,7 +99,6 @@ function displayButtonOpsi(nomor){
     
         let component1 = document.createElement("button")
         component1.className = "buttonOpsi"
-        // component1.onclick = `opsiOnClick(${i})`
         component1.onclick = function(){opsiOnClick(i)}
         component1.innerText = teksOpsi[i]
 
@@ -144,7 +151,7 @@ function jawabanOnClick(nomor){
     buttonJawaban[nomor].style.display = 'none'
     
     let text = buttonJawaban[nomor].innerText
-    let nomorOpsi = paket['soal'][nomor]["opsi"].indexOf(text)
+    let nomorOpsi = paket['soal'][level-1]["opsi"].indexOf(text)
 
     const buttonOpsi = document.getElementsByClassName('buttonOpsi')
     buttonOpsi[nomorOpsi].disabled = false
@@ -155,8 +162,8 @@ function buttonText (button){
 }
 
 function cekJawaban(nomor){
-    let kunci = paket['soal'][nomor-1]["kunci"]
-    let opsi = paket['soal'][nomor-1]["opsi"]
+    let kunci = paket['soal'][level-1]["kunci"]
+    let opsi = paket['soal'][level-1]["opsi"]
 
     const buttonJawaban = document.getElementsByClassName('buttonJawaban')
 
@@ -208,6 +215,21 @@ function displayPopup2(show=false){
         div.style.zIndex = -100;
         div.style.display = 'none'
     }   
+}
+
+function displayAyat(){
+    let ayat = paket['ayat']
+    const pageQuiz = document.getElementById("quizPage")
+    const pageAyat = document.getElementById("ayatPage")
+
+    const divAyat = document.getElementById("ayat")
+
+    pageQuiz.style.display = 'none'
+    pageAyat.style.display = "flex"
+    
+    divAyat.innerText = ayat
+    divAyat.style.display = "flex"
+    
 }
 
 function displayPopup1(show=false,textJudul='Hore'){
