@@ -218,15 +218,20 @@ function displayPopup2(show=false){
 }
 
 function displayAyat(){
-    let ayat = paket['ayat']
+    let ayat = paket['ayat tema'][0]
+    let isiAyat = paket['ayat tema'][1]
     const pageQuiz = document.getElementById("quizPage")
     const pageAyat = document.getElementById("ayatPage")
 
     const divAyat = document.getElementById("ayat")
+    const divIsiAyat = document.getElementById("isiAyat")
 
     pageQuiz.style.display = 'none'
     pageAyat.style.display = "flex"
     
+    divIsiAyat.innerText = isiAyat
+    divIsiAyat.style.display = "flex"
+
     divAyat.innerText = ayat
     divAyat.style.display = "flex"
     

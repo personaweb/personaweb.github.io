@@ -3,29 +3,29 @@
         {
             "ayat":"2 Kor 5 : 17",
             "teks":["Jadi siapa yang ada di dalam Kristus, ia adalah ",": yang lama",", sesungguhnya yang baru","datang."],
-            "blank":["____________","_____________","_____"],
+            "blank":["____________","______________","______"],
             "opsi":["ciptaan baru","sudah berlalu","sudah","akan"],
             "kunci":[0,1,2]
         },
     
         {
-            "ayat":"2 Kor 5 : 18",
-            "teks":["Jadi 2 siapa yang ada di dalam Kristus, ia adalah ",": yang lama",", sesungguhnya yang baru","datang."],
-            "blank":["____________","_____________","_____"],
-            "opsi":["ciptaan baru 2","sudah berlalu","sudah","akan"],
-            "kunci":[0,1,2]
+            "ayat":"Ams 3 : 5",
+            "teks":["Percayalah kepada TUHAN dengan segenap",",dan","bersandar kepada","sendiri."],
+            "blank":["________","_________","___________"],
+            "opsi":["hatimu","jiwamu","janganlah","pengertianmu","pengetahuanmu"],
+            "kunci":[0,2,3]
         },
     
         {
-            "ayat":"2 Kor 5 : 19",
-            "teks":["Jadi 3 siapa yang ada di dalam Kristus, ia adalah ",": yang lama",", sesungguhnya yang baru","datang."],
-            "blank":["____________","_____________","_____"],
-            "opsi":["ciptaan baru 3","sudah berlalu","sudah","akan"],
-            "kunci":[0,1,2]
+            "ayat":"Mat 5 : 16",
+            "teks":["Demikianlah hendaknya terangmu","di depan orang, supaya mereka","perbuatanmu yang","dan memuliakan Bapamu yang di sorga"],
+            "blank":["_________","_______","_______"],
+            "opsi":["bercahaya","menunjukkan","melihat","baik","memuji"],
+            "kunci":[0,2,3]
         }
     ],
 
-    "ayat":"Janganlah hendaknya kerajinanmu kendor, biarlah rohmu menyala-nyala dan layanilah Tuhan."
+    "ayat tema":["Roma 12 : 11","Janganlah hendaknya kerajinanmu kendor, biarlah rohmu menyala-nyala dan layanilah Tuhan."]
 
 }
 
