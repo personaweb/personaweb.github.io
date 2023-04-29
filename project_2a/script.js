@@ -135,13 +135,13 @@ function opsiOnClick(nomor){
 
     for (let i = buttonJawaban.length; i>0; i--){
         if (buttonJawaban[i-1].style.display != 'flex'){
-           console.log(i)
             last = i
         }
     }
     
     buttonJawaban[last-1].innerText = button[nomor].innerText
     buttonJawaban[last-1].style.display = 'flex'
+    buttonJawaban[last-1].style.animation = 'showJawaban 0.3s'
 
 }
 
@@ -149,6 +149,7 @@ function jawabanOnClick(nomor){
 
     const buttonJawaban = document.getElementsByClassName('buttonJawaban')
     buttonJawaban[nomor].style.display = 'none'
+    buttonJawaban[nomor].style.backgroundColor = "rgb(237, 243, 243)"
     
     let text = buttonJawaban[nomor].innerText
     let nomorOpsi = paket['soal'][level-1]["opsi"].indexOf(text)
@@ -187,13 +188,17 @@ function cekJawaban(nomor){
         let benar = 0
         for (let i = 0; i<jumlahKunci; i++){
            
+            // jika benar
             if (opsi[kunci[i]] == jawaban[i]){
-                buttonJawaban[i].style.backgroundColor = "rgb(7, 252, 88)"
                 buttonJawaban[i].disabled = true
+                buttonJawaban[i].style.animation = 'benar 0.3s forwards'
+                
                 benar += 1
             }
+
+            // jika salah 
             else{
-                buttonJawaban[i].style.backgroundColor = "rgb(184, 49, 49)"
+                buttonJawaban[i].style.animation = 'salah 1s forwards'
             }
 
         } 
@@ -231,13 +236,15 @@ function displayAyat(){
     
     divIsiAyat.innerText = isiAyat
     divIsiAyat.style.display = "flex"
+    divIsiAyat.style.animation = 'keyframeAyat 1s forwards'
 
     divAyat.innerText = ayat
     divAyat.style.display = "flex"
+    // divAyat.style.animation = 'keyframeAyat 1s forwards'
     
 }
 
-function displayPopup1(show=false,textJudul='Hore'){
+function displayPopup1(show=false,textJudul='Benar !'){
     const div = document.getElementById("popup1")
     const judul = document.getElementById("judul")
     const isi = document.getElementById("isiPopup")
@@ -249,6 +256,7 @@ function displayPopup1(show=false,textJudul='Hore'){
         isi.innerText = String(level)+'/'+String(panjangSoal)
         div.style.zIndex = 152;
         div.style.display = 'flex'
+        div.style.animation = 'keyframePopup1 1s forwards'
     }
     else {
         div.style.zIndex = -100;
