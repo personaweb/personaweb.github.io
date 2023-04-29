@@ -11,7 +11,7 @@
         {
             "ayat":"Ams 3 : 5",
             "teks":["Percayalah kepada TUHAN dengan segenap",",dan","bersandar kepada","sendiri."],
-            "blank":["________","_________","___________"],
+            "blank":["________","_________","____________"],
             "opsi":["hatimu","jiwamu","janganlah","pengertianmu","pengetahuanmu"],
             "kunci":[0,2,3]
         },

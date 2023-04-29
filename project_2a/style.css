@@ -157,8 +157,8 @@ body {
 }
 
 #popup1{
-    width: 80vw;
-    height: 40vh;
+    width: 90vw;
+    height: 42vh;
 
     position: absolute;
     top:20%;
@@ -171,7 +171,9 @@ body {
     align-items: center;
     justify-content: center;
 
-    background-color: rgb(226, 226, 226);
+    border-radius: 10px;
+
+    background-color: rgba(226, 226, 226, 0.432);
 }
 
 #popup2{
@@ -191,7 +193,7 @@ body {
     justify-content: center;
     border : solid black 2px;
 
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(226, 226, 226);
 }
 
 #ayatPage{
