@@ -241,9 +241,9 @@ body {
 
 #konten{
     width: 80vw;
-    height: 60vh;
+    height:fit-content;
 
-    padding: 10px 15px;
+    padding: 10% 15px;
 
     position: absolute;
     top:10%;
