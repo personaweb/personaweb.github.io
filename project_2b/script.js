@@ -1,13 +1,14 @@
 let paket = []
+let paket2 = []
 let metaData = []
 let last = 1
 let level = 1
 let panjangJawaban = 0
 
 function test (){
-    fetchJson()
+    fetchJson2()
     displayLoading(1)
-    setTimeout(start,3000)
+    setTimeout(start,5000)
     // fetchJson()
 }
 
@@ -310,6 +311,19 @@ function fetchJson(){
     console.log('fetching')
 
     fetch ("./test.json")
+    .then((Response)=>{
+        return Response.json()
+    })
+    .then((hasil)=>{
+        paket = hasil
+        return hasil;
+    })
+}
+
+function fetchJson2(){
+    console.log('fetching')
+
+    fetch ("https://script.google.com/macros/s/AKfycbwoUsooSzvxwFfyal58fmBsdkjhvpz_H4tzMKPWSKxI94PMYEc4Y4ofPfjl_0LaJtK2bQ/exec")
     .then((Response)=>{
         return Response.json()
     })
