@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipe</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body onload="test()">
+   
+  <!-- halaman 1 loading -->
+  <div id="loadingPage">
+    <h1>loading ...</h1>
+  </div>
+  
+  <!-- halaman 2 quiz -->
+  <div id="quizPage">
+
+    <div id="judulSoal">
+      <!-- 2 Kor 5 : 17 -->
+    </div>
+
+    <div id="soal">
+      <!-- <div class="text">Jadi siapa yang ada di dalam Kristus, ia adalah</div>
+      <div class="blank">____________</div>
+      <div class="text">: yang lama</div>
+      <div class="blank">_____________</div> -->
+    </div>
+
+    <div id="opsi">
+      <!-- <button class="buttonOpsi">satu</button>
+      <button class="buttonOpsi">satu dua</button>
+      <button class="buttonOpsi">satu panjang sekali</button> -->.
+    </div>
+    
+    <div id="jawaban"></div>
+    
+    <div id="nav">
+        <button id="cekButton" onclick="cekJawaban(1)">cek</button>
+        <button id="passButton"onclick="pass()">pass</button>
+    </div>
+
+    <div id="popup1">
+      <div id="judul"></div>
+      <div id="isiPopup"></div>
+    </div>
+
+    <div id="popup2">Jawaban Kurang !</div>
+
+  </div>
+
+  <!-- halaman 3 penutup -->
+  <div id="ayatPage">
+    <div id="ayat"></div>
+    <div id="isiAyat"></div>
+    <div id="nilai"></div>
+  </div>
+
+
+
+</body>
+<script src="script.js"></script>
+</html>
