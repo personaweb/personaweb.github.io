@@ -6,7 +6,7 @@ let level = 1
 let panjangJawaban = 0
 
 function test (){
-    fetchJson2()
+    fetchJson()
     displayLoading(1)
     setTimeout(start,5000)
     // fetchJson()
@@ -263,21 +263,18 @@ function displayAyat(){
 
     const divJudul = document.getElementById("judulPenutup")
     const divKonten = document.getElementById("konten")
+    const imgKonten = document.getElementById("kontenImg")
     const divJudulVideo = document.getElementById("judulVideo")
 
-    // divKonten.innerText = konten
+    imgKonten.src = metaData['thumbnail_url']
+
     divKonten.style.display = "flex"
     divKonten.style.animation = 'keyframeAyat 1s forwards'
-    // divKonten.onclick = function(){openLinkYoutube}
 
     divJudul.innerText = judul
     divJudul.style.display = "flex"
 
-    divJudulVideo.innerText = metaData['title']
-
-    
-    // divAyat.style.animation = 'keyframeAyat 1s forwards'
-    
+    divJudulVideo.innerText = metaData['title'] 
 }
 
 function openLinkYoutube (){
@@ -310,19 +307,7 @@ function displayPopup1(show=false,textJudul='Benar !'){
 function fetchJson(){
     console.log('fetching')
 
-    fetch ("./test.json")
-    .then((Response)=>{
-        return Response.json()
-    })
-    .then((hasil)=>{
-        paket = hasil
-        return hasil;
-    })
-}
-
-function fetchJson2(){
-    console.log('fetching')
-
+    // fetch ("./test.json")
     fetch ("https://script.google.com/macros/s/AKfycbwoUsooSzvxwFfyal58fmBsdkjhvpz_H4tzMKPWSKxI94PMYEc4Y4ofPfjl_0LaJtK2bQ/exec")
     .then((Response)=>{
         return Response.json()
