@@ -1,13 +1,13 @@
 {
     "soal": {
-        "ayat":"2 Kor 5 : 17",
-        "teks":["Jadi siapa yang ada di dalam Kristus, ia adalah ",": yang lama",", sesungguhnya yang baru","datang."],
-        "blank":["_____________","______________","______"],
-        "opsi":["ciptaan baru","sudah berlalu","sudah","akan"],
+        "ayat":"Yakobus 4 : 3",
+        "teks":["Atau kamu berdoa juga, tetapi kamu tidak menerima apa-apa, karena kamu "," ,sebab yang kamu minta itu hendak kamu ","untuk","hawa nafsumu"],
+        "blank":["_____________ ","__________ ","____________ "],
+        "opsi":["salah berdoa","habiskan","memuaskan"],
         "kunci":[0,1,2] 
     },
             
-    "ayat tema":["Roma 12 : 11","Janganlah hendaknya kerajinanmu kendor, biarlah rohmu menyala-nyala dan layanilah Tuhan."]
+    "videoURL":"https://www.youtube.com/watch?v=xtoXrIIgPIQ"
 
 }
 

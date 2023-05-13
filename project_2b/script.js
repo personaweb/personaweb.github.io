@@ -1,4 +1,5 @@
 let paket = []
+let metaData = []
 let last = 1
 let level = 1
 let panjangJawaban = 0
@@ -7,9 +8,21 @@ function test (){
     fetchJson()
     displayLoading(1)
     setTimeout(start,3000)
-    
-    
     // fetchJson()
+}
+
+function fetchVideoMeta(){
+    const videoURL = paket["videoURL"]
+    const url = `https://youtube.com/oembed?url=${videoURL}&format=json`
+    console.log('fetching meta')
+
+    fetch (url)
+    .then((Response)=>{
+        console.log("response")
+        return Response.json()
+    }).then((responseJson)=>{
+        metaData = responseJson
+    })
 }
 
 function displayLoading(display){
@@ -25,6 +38,7 @@ function displayLoading(display){
 
 function start (){
     console.log("jalan1")
+    fetchVideoMeta()
     displayLoading(0)
 
     displayJudulSoal(1)
@@ -238,26 +252,39 @@ function displayPopup2(show=false){
 }
 
 function displayAyat(){
-    let ayat = "1 Menit"
-    let isiAyat = paket['ayat tema'][1]
+    let judul = "1 Menit"
+    let konten = "judul, gambar, div click"
     const pageQuiz = document.getElementById("quizPage")
-    const pageAyat = document.getElementById("ayatPage")
-
-    const divAyat = document.getElementById("ayat")
-    const divIsiAyat = document.getElementById("isiAyat")
+    const pagePenutup = document.getElementById("penutupPage")
 
     pageQuiz.style.display = 'none'
-    pageAyat.style.display = "flex"
-    
-    divIsiAyat.innerText = isiAyat
-    divIsiAyat.style.display = "flex"
-    divIsiAyat.style.animation = 'keyframeAyat 1s forwards'
+    pagePenutup.style.display = "flex"
 
-    divAyat.innerText = ayat
-    divAyat.style.display = "flex"
+    const divJudul = document.getElementById("judulPenutup")
+    const divKonten = document.getElementById("konten")
+    const divJudulVideo = document.getElementById("judulVideo")
+
+    // divKonten.innerText = konten
+    divKonten.style.display = "flex"
+    divKonten.style.animation = 'keyframeAyat 1s forwards'
+    // divKonten.onclick = function(){openLinkYoutube}
+
+    divJudul.innerText = judul
+    divJudul.style.display = "flex"
+
+    divJudulVideo.innerText = metaData['title']
+
+    
     // divAyat.style.animation = 'keyframeAyat 1s forwards'
     
 }
+
+function openLinkYoutube (){
+    console.log ("halo")
+    const videoURL = paket['videoURL']
+    window.open(videoURL)
+}
+
 
 function displayPopup1(show=false,textJudul='Benar !'){
     const div = document.getElementById("popup1")

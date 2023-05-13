@@ -74,9 +74,10 @@ body {
 
 #soal{
     width: 80vw;
-    height: 42vh;
+    height: fit-content;
 
     padding-top: 10%;
+    padding-bottom: 1%;
     padding-left: 5%;
     padding-right: 5%;
     font-size: 1.5em;
@@ -103,11 +104,11 @@ body {
 
 #opsi{
     width: 80vw;
-    height: 20vh;
+    height: 14vh;
 
     z-index: 151;
     position: absolute;
-    top :56%;
+    top :67%;
 
     border-radius: 10px;
 
@@ -159,7 +160,7 @@ body {
     align-items: center;
 
     position: absolute;
-    top :80%;
+    top :81%;
 
 
 }
@@ -222,7 +223,7 @@ body {
     background-color: rgb(226, 226, 226);
 }
 
-#ayatPage{
+#penutupPage{
     width: 100vw;
     height: 100vh;
 
@@ -238,7 +239,7 @@ body {
     /* background-color: ; */
 }
 
-#isiAyat{
+#konten{
     width: 80vw;
     height: 60vh;
 
@@ -260,13 +261,30 @@ body {
     background-color: rgb(226, 226, 226);
 }
 
-#ayat{
+#konten img{
+    width: 90%;
+}
+
+#judulVideo{
+    width: 90%;
+    margin-top: 20px;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+
+    font-size: 1em;
+    
+} 
+
+#judulPenutup{
     width: 40vw;
     height: 40px;
 
     position: absolute;
     top:7%;
-    z-index: 101;
+    z-index: 301;
 
     font-size: 1.2em;
 
