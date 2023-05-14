@@ -148,7 +148,7 @@ function generateButtonJawaban(){
         component1.style.width = (blank[i].getBoundingClientRect().width - 5) + "px"
         component1.style.height = (blank[i].getBoundingClientRect().height) + "px"
         component1.style.position ='absolute'
-        component1.style.top = (blank[i].getBoundingClientRect().y - 7) + "px"
+        component1.style.top = (blank[i].getBoundingClientRect().y - 8) + "px"
         component1.style.left = (blank[i].getBoundingClientRect().x )  + "px"
         component1.onclick = function(){jawabanOnClick(i)}
 
