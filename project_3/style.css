@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    padding-top: 10vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: aqua;
+}
+
+.display {
+
+    width: 80vw;
+    height: 28vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: rgb(22, 116, 47);
+}
+
+#list_detail {
+    width: 70vw;
+    height: 18vh;
+
+    margin-top: 2vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    overflow-y: auto;
+
+    background-color: rgb(255, 255, 255);
+}
+
+#total_rupiah{
+    width: 70vw;
+    height: 6vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+
+    background-color: rgb(255, 255, 255);
+}
+
+
+.opsi_toko {
+
+    width: 80vw;
+    height: 14vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-evenly;
+    
+    flex-wrap: wrap;
+
+    background-color: rgb(96, 116, 22);
+}
+
+.button_toko{
+    width: 18vw;
+    height: 5vh;
+}
+
+
+.input_tombol {
+
+    width: 80vw;
+    height: 28vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-evenly;
+    
+    flex-wrap: wrap;
+
+    background-color: rgb(100, 22, 116);
+}
+
+.button_input{
+    width: 18vw;
+    height: 7vh;
+}
+
+
+
